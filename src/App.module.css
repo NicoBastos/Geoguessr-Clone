@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  font-family: Roboto;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+}
+
+.Body {
+  height: 93vh;
+}

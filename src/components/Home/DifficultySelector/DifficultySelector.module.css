@@ -1,0 +1,138 @@
+.DiffcultySelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.DiffcultySelector p {
+  margin-top: -3%;
+  color: #4f4f4f;
+}
+.DiffcultySelector button {
+  margin-top: 30%;
+  margin: 3%;
+  width: 10vw;
+  height: 7vh;
+}
+.EasyButton {
+  background-color: rgba(111, 207, 151, 0.5);
+  border: 1px solid #27ae60;
+  border-radius: 100px;
+}
+.EasyButtonSelected {
+  background-color: #27ae60;
+  border: 1px solid #27ae60;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  color: white;
+  /* width: 12vw !important;
+  height: 9vh !important; */
+}
+.MediumButton {
+  background-color: rgba(242, 153, 74, 0.5);
+  border: 1px solid #f2994a;
+  border-radius: 100px;
+}
+.MediumButtonSelected {
+  background-color: #f2994a;
+  border: 1px solid #f2994a;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+.HardButton {
+  background-color: rgba(235, 87, 87, 0.5);
+  border: 1px solid #f2994a;
+  border-radius: 100px;
+}
+.HardButtonSelected {
+  background-color: #eb5757;
+  border: 1px solid #eb5757;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+
+@media only screen and (max-width: 400px) {
+  .DiffcultySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .DiffcultySelector button {
+    width: 25vw !important;
+    height: 5vh !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .DiffcultySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+  .DiffcultySelector button {
+    margin-top: 30%;
+    margin: 3%;
+    width: 25vw;
+    height: 7vh;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .DiffcultySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .DiffcultySelector button {
+    margin-top: 30%;
+    margin: 3%;
+    width: 25vw;
+    height: 7vh;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .DiffcultySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .DiffcultySelector button {
+    margin-top: 30%;
+    margin: 3%;
+    width: 25vw;
+    height: 7vh;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .DiffcultySelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+  }
+  .DiffcultySelector button {
+    /* margin-top: 30%; */
+    margin: 3%;
+    width: 20vw;
+    height: 7vh;
+  }
+}

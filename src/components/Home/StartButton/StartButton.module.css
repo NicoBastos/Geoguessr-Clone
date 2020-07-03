@@ -1,0 +1,17 @@
+.StartButton {
+  width: 45vw;
+  height: 8vh;
+  margin-bottom: 10%;
+  font-style: normal;
+  font-weight: bold;
+  /* display: flex; */
+  font-size: 22px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-feature-settings: "ss03" on;
+  border-radius: 157px;
+  background: #eb5757;
+  color: #fbfbfb;
+}
