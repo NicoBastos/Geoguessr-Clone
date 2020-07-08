@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   flex-grow: 0.5;
-  height: 7vh;
+  height: 100%;
   justify-content: flex-start;
   align-items: center;
   width: 100%;

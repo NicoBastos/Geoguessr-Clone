@@ -18,30 +18,26 @@ const DiffcultySelector: React.FC<Props> = (props) => {
   };
   return (
     <div className={classes.DiffcultySelector}>
-      <button className={easyButtonClass} onClick={() => handleClick("easy")}>
-        Easy
-      </button>
-      <button
-        className={mediumButtonClass}
-        onClick={() => handleClick("medium")}
-      >
-        Medium
-      </button>
-      <button className={hardButtonClass} onClick={() => handleClick("hard")}>
-        Hard
-      </button>
+      <div className={classes.ButtonsContainer}>
+        <button className={easyButtonClass} onClick={() => handleClick("easy")}>
+          Easy
+        </button>
+        <button
+          className={mediumButtonClass}
+          onClick={() => handleClick("medium")}
+        >
+          Medium
+        </button>
+        <button className={hardButtonClass} onClick={() => handleClick("hard")}>
+          Hard
+        </button>
+      </div>
       {selected === "easy" ? (
-        <p>
-          easyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasyeasy
-        </p>
+        <p>easy</p>
       ) : selected === "medium" ? (
-        <p>
-          mediummediummediummediummediummediummediummediummediummediummediummedium
-        </p>
+        <p>medium</p>
       ) : (
-        <p>
-          hardhardhardhardhardhardhardhardhardhardhardhardhardhardhardhardhard
-        </p>
+        <p>hard</p>
       )}
     </div>
   );

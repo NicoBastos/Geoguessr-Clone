@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./Navbar.module.css";
 import Logo from "../../static/geoguesser_icon.svg";
-import { Redirect, Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (

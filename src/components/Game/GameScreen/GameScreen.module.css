@@ -1,0 +1,24 @@
+.GameScreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  position: abosule;
+}
+.StreetView {
+  width: 100%;
+  height: 100%;
+}
+.MapWrapper {
+  position: absolute;
+  z-index: 100;
+  margin-top: 11%;
+  margin-left: 60%;
+  width: 35%;
+  height: 50%;
+}
+.GameWrapper {
+  position: abosule;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}

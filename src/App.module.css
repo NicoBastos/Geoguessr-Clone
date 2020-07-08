@@ -4,12 +4,6 @@
   margin: 0;
   font-family: Roboto;
 }
-
-.App {
-  display: flex;
-  flex-flow: column;
-}
-
-.Body {
-  height: 93vh;
+.NavBar {
+  height: 7vh;
 }

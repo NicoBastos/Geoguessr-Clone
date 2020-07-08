@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import classes from "./StartButton.module.css";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../../context/appContext";
@@ -8,8 +8,16 @@ interface Props {
     difficulty: string;
   };
 }
+
 const StartButton: React.FC<Props> = (props) => {
   const { difficulty, userSelectedDifficulty } = props.difficultySettings;
+  const { setSettings } = useContext(AppContext);
+
+  useEffect(() => {
+    if (setSettings) {
+      setSettings(difficulty);
+    }
+  });
   const button: JSX.Element = userSelectedDifficulty ? (
     <Link to="/game">
       <button className={classes.StartButton}>Start</button>
@@ -17,11 +25,6 @@ const StartButton: React.FC<Props> = (props) => {
   ) : (
     <button className={classes.StartButton}>Start</button>
   );
-  return (
-    <React.Fragment>
-      {button}
-      <AppContext.Provider value={{ difficulty: difficulty }} />
-    </React.Fragment>
-  );
+  return <React.Fragment>{button}</React.Fragment>;
 };
 export default StartButton;
