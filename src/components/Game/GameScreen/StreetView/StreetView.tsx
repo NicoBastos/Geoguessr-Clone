@@ -4,8 +4,9 @@ import classes from "./StreetView.module.css";
 interface Props {
   difficulty: string | undefined;
 }
+//Fake key AIzaSyBKCeA2SUnKaec8XdxOTM-JUAtYvV1NXAg
 const StreetView: React.FC<Props> = (props) => {
-  const googleMapsApiKey = "AIzaSyBKCeA2SUnKaec8XdxOTM-JUAtYvV1NXAg";
+  const googleMapsApiKey = "";
   const streetViewPanoramaOptions = {
     position: { lat: 52.321945, lng: -106.584168 },
     pov: { heading: 100, pitch: 0 },
