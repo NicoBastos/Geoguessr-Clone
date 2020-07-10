@@ -1,0 +1,43 @@
+.RoundInfoContainer {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    #eb5757;
+  border-radius: 25px 25px 0 0;
+  position: abosule;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  line-height: 22px;
+}
+
+.Title {
+  font-weight: 300;
+  font-size: 13px;
+}
+.Data {
+  font-size: 35px;
+}
+.RoundContainer {
+  margin: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22%;
+}
+
+.PointsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 18%;
+  margin-bottom: 22%;
+}

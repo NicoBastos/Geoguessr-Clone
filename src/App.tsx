@@ -16,7 +16,7 @@ function App() {
           <div className={classes.Body}>
             <Switch>
               <Route exact path="/">
-                <div className={classes.Home}>
+                <div className={classes.HomeWrapper}>
                   <Home />
                 </div>
               </Route>

@@ -9,7 +9,7 @@ interface Game {
   points: number;
 }
 const GameScreen: React.FC = () => {
-  const { settings } = useContext(AppContext);
+  const { difficulty } = useContext(AppContext);
 
   const [roundFinished, setRoundFinished] = useState<boolean>(false);
   const [game, setGame] = useState<Game>({
@@ -23,7 +23,7 @@ const GameScreen: React.FC = () => {
         {roundFinished ? <p>Modal with round summary</p> : <WorldMap />}
       </div>
       <div className={classes.StreetView}>
-        <StreetView difficulty={settings} />
+        <StreetView difficulty={difficulty} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 .Home {
   background-image: url(../../static/homeBackground.JPG);
   display: grid;
+  background: cover;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
@@ -10,11 +11,11 @@
     ". gameSettings gameSettings ."
     ". gameSettings gameSettings .";
   align-items: center;
-  padding: 0;
 }
 .StartButtonContainer {
   width: 60%;
   height: 30%;
+  margin-bottom: 20%;
 }
 
 .difficultySelector {

@@ -7,3 +7,17 @@
 .NavBar {
   height: 7vh;
 }
+
+.Body {
+  height: 93vh;
+}
+
+.HomeWrapper {
+  height: 100%;
+}
+
+.HomeWrapper > * {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}

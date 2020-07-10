@@ -4,16 +4,16 @@ type Props = {
   children: any;
 };
 type ContextProperties = {
-  settings: string;
-  setSettings: React.Dispatch<React.SetStateAction<string>>;
+  difficulty: string;
+  setDifficulty: React.Dispatch<React.SetStateAction<string>>;
 };
 const AppContext = React.createContext<Partial<ContextProperties>>({
-  settings: "",
+  difficulty: "",
 });
 const AppContextProvider: React.FC<Props> = (props) => {
-  const [settings, setSettings] = useState<string>("");
+  const [difficulty, setDifficulty] = useState<string>("");
   return (
-    <AppContext.Provider value={{ settings, setSettings }}>
+    <AppContext.Provider value={{ difficulty, setDifficulty }}>
       {props.children}
     </AppContext.Provider>
   );

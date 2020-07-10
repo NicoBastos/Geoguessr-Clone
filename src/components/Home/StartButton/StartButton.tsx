@@ -11,11 +11,11 @@ interface Props {
 
 const StartButton: React.FC<Props> = (props) => {
   const { difficulty, userSelectedDifficulty } = props.difficultySettings;
-  const { setSettings } = useContext(AppContext);
+  const { setDifficulty } = useContext(AppContext);
 
   useEffect(() => {
-    if (setSettings) {
-      setSettings(difficulty);
+    if (setDifficulty) {
+      setDifficulty(difficulty);
     }
   });
   const button: JSX.Element = userSelectedDifficulty ? (
