@@ -1,0 +1,46 @@
+.EndOfRound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.Map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 0;
+}
+.InfoContainer {
+  width: 45%;
+  height: 35%;
+  position: absolute;
+  bottom: -8%;
+  z-index: 1;
+  background: #eb5757;
+  border-radius: 25px;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.InfoContainer p {
+  margin: 3%;
+}
+.NextRoundButton {
+  width: 75%;
+  height: 23%;
+  background: #f2f2f2;
+  border-radius: 157.143px;
+  color: #4f4f4f;
+  border: none;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 30px;
+}

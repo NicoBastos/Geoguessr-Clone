@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactStreetview from "react-streetview";
 import classes from "./StreetView.module.css";
+import { AppContext } from "../../../../context/appContext";
 interface Props {
   difficulty: string | undefined;
+}
+interface Position {
+  lat: number;
+  lng: number;
 }
 //Fake key AIzaSyBKCeA2SUnKaec8XdxOTM-JUAtYvV1NXAg
 // AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A
 const StreetView: React.FC<Props> = (props) => {
+  const { currentRoundAnswer } = useContext(AppContext);
   const googleMapsApiKey = "AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A";
   const streetViewPanoramaOptions = {
-    position: { lat: 52.321945, lng: -106.584168 },
+    position: { lat: currentRoundAnswer.lat, lng: currentRoundAnswer.lng },
     pov: { heading: 100, pitch: 0 },
     zoom: 1,
     disableDefaultUI: false,

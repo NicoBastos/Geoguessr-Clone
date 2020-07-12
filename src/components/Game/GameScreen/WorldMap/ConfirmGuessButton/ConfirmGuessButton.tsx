@@ -1,7 +1,21 @@
 import React from "react";
 import classes from "./ConfirmGuessButton.module.css";
-const ConfirmGuessButton: React.FC = () => {
-  return <button className={classes.GuessButton}>MAKE A GUESS</button>;
+
+interface Props {
+  selected: boolean;
+  handleEndOfRound: () => any;
+}
+const ConfirmGuessButton: React.FC<Props> = (props) => {
+  const handleClick = () => {
+    if (props.selected) {
+      props.handleEndOfRound();
+    }
+  };
+  return (
+    <button className={classes.GuessButton} onClick={() => handleClick()}>
+      MAKE A GUESS
+    </button>
+  );
 };
 
 export default ConfirmGuessButton;
