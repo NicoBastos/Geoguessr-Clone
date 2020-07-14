@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
           <img alt="logo" src={Logo} />
         </a>
       </div>
+      <p className={classes.Title}>Geoguessr-Clone</p>
     </header>
   );
 };

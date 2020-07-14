@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
-import classes from "./EndOfRound.module.css";
+import classes from "./EndScreen.module.css";
 import { Map, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import { AppContext } from "../../../../context/appContext";
-interface Props {
-  handleNextRound: () => any;
-}
-const EndOfRound: React.FC<Props> = (props) => {
+import { Link } from "react-router-dom";
+
+const EndScreen: React.FC = () => {
   const {
     currentRoundGuess,
     currentRoundAnswer,
     pointsEarned,
     guessDist,
   } = useContext(AppContext);
-  const { lat, lng } = currentRoundGuess;
+  const lat = currentRoundGuess.lat;
+  const lng = currentRoundGuess.lng;
+
   const icon = L.icon({ iconUrl: require("../../../../static/marker.svg") });
   return (
     <div className={classes.EndOfRound}>
@@ -35,20 +36,25 @@ const EndOfRound: React.FC<Props> = (props) => {
         </Map>
       </div>
       <div className={classes.InfoContainer}>
-        <p>{guessDist} Miles Away</p>
-        <p>
-          Your guess was {guessDist} miles away from the correct location! You
-          got {pointsEarned} points for your guess.
-        </p>
-        <button
-          className={classes.NextRoundButton}
-          onClick={() => props.handleNextRound()}
-        >
-          NEXT ROUND
-        </button>
+        <div className={classes.DataContainer}>
+          <div className={classes.Data1}>
+            <p>{pointsEarned} PTS</p>
+            You got {pointsEarned} points for your guess.
+          </div>
+          <div className={classes.Data2}>
+            <p>{guessDist} Miles Away</p>
+            Your guess was {guessDist} miles away from the correct location!
+          </div>
+          <div className={classes.Data3}></div>
+        </div>
+        <div className={classes.PlayAgainButtonContainer}>
+          <Link to="/">
+            <button className={classes.NextRoundButton}>PLAY AGAIN</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default EndOfRound;
+export default EndScreen;

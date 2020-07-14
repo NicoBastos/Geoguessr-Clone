@@ -33,11 +33,14 @@ const DiffcultySelector: React.FC<Props> = (props) => {
         </button>
       </div>
       {selected === "easy" ? (
-        <p>easy</p>
+        <p>Roads are labeled, you can move and look around freely.</p>
       ) : selected === "medium" ? (
-        <p>medium</p>
+        <p>Roads are not labeled, zoom is disabled and you can't pan around</p>
       ) : (
-        <p>hard</p>
+        <p>
+          Roads are not labaled, zoom is disabled and you can't pan or move
+          around.
+        </p>
       )}
     </div>
   );

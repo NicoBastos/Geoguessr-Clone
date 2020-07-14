@@ -1,0 +1,81 @@
+.EndOfRound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.Map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 0;
+}
+.InfoContainer {
+  width: 100.5%;
+  height: 50%;
+  position: absolute;
+  bottom: -8%;
+  z-index: 1;
+  background: #eb5757;
+  border-radius: 25px;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+.InfoContainer p {
+}
+.NextRoundButton {
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 22px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  border-radius: 157px;
+  color: #4f4f4f;
+  border: none;
+}
+
+.PlayAgainButtonContainer {
+  width: 40%;
+  height: 20%;
+  margin-top: 5%;
+}
+.DataContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.Data1 {
+  width: 33%;
+  height: 100%;
+  padding: 2%;
+  text-align: center;
+  font-size: 25px;
+  border-right: 2px dotted white;
+}
+
+.Data2 {
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  padding: 2%;
+  border-right: 2px dotted white;
+}
+.Data3 {
+  width: 33%;
+  height: 100%;
+
+  padding: 2%;
+}

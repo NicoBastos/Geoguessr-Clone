@@ -5,10 +5,22 @@ import classes from "./GameScreen.module.css";
 import WorldMap from "./WorldMap/WorldMap";
 import EndOfRound from "./EndOfRound/EndOfRound";
 import Modal from "../Modal/Modal";
+import EndScreen from "../GameScreen/EndScreen/EndScreen";
 interface Game {
   round: number;
   points: number;
 }
+interface TransitionStyle {
+  transform?: string | number;
+  opacity: number;
+}
+interface TransitionStyles {
+  entering: TransitionStyle;
+  entered: TransitionStyle;
+  exiting: TransitionStyle;
+  exited: TransitionStyle;
+}
+
 const GameScreen: React.FC = () => {
   const {
     difficulty,
@@ -74,19 +86,27 @@ const GameScreen: React.FC = () => {
     setCurrentRoundFished(false);
     setCurrentRoundAnswer(getRandomPosition());
   };
+  const mapClassName = !currentRoundFinished
+    ? classes.Map + classes.Open
+    : classes.Map + classes.Close;
   return (
     <div className={classes.GameScreen}>
       <div className={classes.MapWrapper}>
         {currentRoundFinished ? (
           gameFinished ? (
-            <p>EndScreen</p>
+            <Modal show={currentRoundFinished}>
+              <EndScreen />
+            </Modal>
           ) : (
             <Modal show={currentRoundFinished}>
               {<EndOfRound handleNextRound={handleNextRound} />}
             </Modal>
           )
         ) : (
-          <WorldMap handleEndOfRound={endOfRoundHandler} />
+          <WorldMap
+            handleEndOfRound={endOfRoundHandler}
+            className={mapClassName}
+          />
         )}
       </div>
       <div className={classes.StreetView}>

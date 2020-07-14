@@ -10,7 +10,7 @@
   flex-direction: row;
 }
 .DiffcultySelector p {
-  margin-top: 3%;
+  margin: 3%;
   color: #4f4f4f;
 }
 .DiffcultySelector button {

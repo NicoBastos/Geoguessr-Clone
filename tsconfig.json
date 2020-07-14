@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -15,7 +15,8 @@
     "noEmit": true,
     "jsx": "react",
     "strictNullChecks": false,
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["src", "postcss.config.js"],
   "exclude": ["node_modules", "typings"]

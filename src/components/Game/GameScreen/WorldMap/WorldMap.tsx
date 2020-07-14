@@ -7,10 +7,15 @@ import ConfirmGuessButton from "./ConfirmGuessButton/ConfirmGuessButton";
 import { AppContext } from "../../../../context/appContext";
 interface Props {
   handleEndOfRound: () => void;
+  className: any;
 }
 const WorldMap: React.FC<Props> = (props) => {
   const { currentRoundGuess, setCurrentRoundGuess } = useContext(AppContext);
-  const icon = L.icon({ iconUrl: require("../../../../static/marker.svg") });
+  const icon = L.icon({
+    iconUrl: require("../../../../static/marker.svg"),
+    iconSize: [24, 24],
+    iconAnchor: L.point(12, 24),
+  });
 
   const [selected, setSelected] = useState<boolean>(false);
   const handleMapClick = (e: any) => {
@@ -24,8 +29,8 @@ const WorldMap: React.FC<Props> = (props) => {
         <RoundInformationDisplay />
       </div>
       <Map
-        center={[45.4, -75.7]}
-        zoom={3}
+        center={[35, -45]}
+        zoom={2}
         className={classes.Map}
         onClick={(e: any) => handleMapClick(e)}
       >

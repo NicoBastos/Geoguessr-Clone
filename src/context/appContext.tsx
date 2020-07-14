@@ -76,7 +76,7 @@ const AppContext = React.createContext<Partial<ContextProperties>>({});
 const AppContextProvider: React.FC<Props> = (props) => {
   const [points, setPoints] = useState<number>(0);
   const [difficulty, setDifficulty] = useState<string>("");
-  const [round, setRound] = useState<number>(1);
+  const [round, setRound] = useState<number>(0);
   const [currentRoundFinished, setCurrentRoundFished] = useState<boolean>(
     false
   );
