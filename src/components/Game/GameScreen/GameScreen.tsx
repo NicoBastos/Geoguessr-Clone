@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { AppContext } from "../../../context/appContext";
 import StreetView from "./StreetView/StreetView";
 import classes from "./GameScreen.module.css";
@@ -83,13 +83,13 @@ const GameScreen: React.FC = () => {
     setCurrentRoundFished(true);
   };
   const handleNextRound = () => {
-    console.log("next round");
     setCurrentRoundFished(false);
     setCurrentRoundAnswer(getRandomPosition());
   };
   const mapClassName = !currentRoundFinished
     ? classes.Map + classes.Open
     : classes.Map + classes.Close;
+
   return (
     <div className={classes.GameScreen}>
       <div className={classes.MapWrapper}>
@@ -111,7 +111,7 @@ const GameScreen: React.FC = () => {
         )}
       </div>
       <div className={classes.StreetView}>
-        <StreetView difficulty={difficulty} />
+        <StreetView difficulty={difficulty} coordinates={currentRoundAnswer} />
       </div>
     </div>
   );

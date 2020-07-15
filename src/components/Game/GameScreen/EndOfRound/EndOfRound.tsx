@@ -3,7 +3,6 @@ import classes from "./EndOfRound.module.css";
 import { Map, TileLayer, Marker, Polyline } from "react-leaflet";
 import L from "leaflet";
 import { AppContext } from "../../../../context/appContext";
-import ReactLeafletMultiOptionsPolyline from "../PolyLine/CustomPolyline";
 
 interface Props {
   handleNextRound: () => any;
