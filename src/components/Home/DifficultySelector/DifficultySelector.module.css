@@ -3,22 +3,26 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  flex-wrap: nowrap;
+  width: 100%;
 }
 .ButtonsContainer {
   display: flex;
   flex-direction: row;
+  height: 100%;
+  width: 100%;
 }
-.DiffcultySelector p {
-  margin: 3%;
+.Paragraph {
   color: #4f4f4f;
+  margin: 20%;
+  height: 100%;
+  width: 80%;
+  margin-top: 8%;
+  font-size: 12px;
 }
 .DiffcultySelector button {
-  margin-top: 30%;
   margin: 3%;
-  width: 10vw;
-  height: 7vh;
-  outline: none;
+  width: 100%;
+  height: 100%;
 }
 .EasyButton {
   background-color: rgba(111, 207, 151, 0.5);
@@ -27,35 +31,51 @@
 }
 .EasyButtonSelected {
   background-color: #27ae60;
-  border: 1px solid #27ae60;
+  border: 1px solid #1f7c46;
   box-sizing: border-box;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
   color: white;
+  height: 120% !important;
+  width: 120% !important;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 .MediumButton {
   background-color: rgba(242, 153, 74, 0.5);
   border: 1px solid #f2994a;
   border-radius: 100px;
+  letter-spacing: 2px;
 }
 .MediumButtonSelected {
   background-color: #f2994a;
-  border: 1px solid #f2994a;
+  border: 1px solid #a8550d;
   box-sizing: border-box;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
+  color: white;
+  height: 120% !important;
+  width: 120% !important;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 .HardButton {
   background-color: rgba(235, 87, 87, 0.5);
-  border: 1px solid #f2994a;
+  border: 1px solid #eb5757;
   border-radius: 100px;
+  letter-spacing: 2px;
 }
 .HardButtonSelected {
   background-color: #eb5757;
-  border: 1px solid #eb5757;
+  border: 1px solid #a01818;
   box-sizing: border-box;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  height: 120% !important;
+  width: 120% !important;
+  letter-spacing: 2px;
 }
 
 @media only screen and (max-width: 400px) {

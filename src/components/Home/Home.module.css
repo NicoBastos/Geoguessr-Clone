@@ -1,39 +1,40 @@
 .Home {
-  background-image: url(../../static/homeBackground.JPG);
+  background-image: url(../../static/londonMap.JPG);
   display: grid;
   background: cover;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     ". . . ."
     "logo logo logo logo"
     ". paragraph paragraph ."
     ". gameSettings gameSettings ."
-    ". gameSettings gameSettings .";
+    ". . . . ";
   align-items: center;
+  grid-row-gap: 10%;
 }
 .StartButtonContainer {
-  width: 60%;
-  height: 30%;
-  margin-bottom: 20%;
+  width: 100%;
+  height: 25%;
 }
 
 .difficultySelector {
   width: 100%;
-  height: 100%;
-  grid-area: difficultySelector;
+  height: 55%;
 }
 .paragraph {
   grid-area: paragraph;
   font-family: Roboto;
   color: #4f4f4f;
   text-align: center;
-  margin: 0 !important;
+  margin: 0;
 }
 .gameSettings {
-  margin-top: 6%;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  /* I have to set the margin left to the rest of the width divided by two because I probably set up the layout wrong somehow. */
+  margin-left: 25%;
+  margin-bottom: 20%;
+  height: 60%;
   grid-area: gameSettings;
   display: flex;
   flex-direction: column;

@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import classes from "./EndScreen.module.css";
-import { Map, TileLayer, Marker } from "react-leaflet";
+import { Map, TileLayer, Marker, Polyline } from "react-leaflet";
 import L from "leaflet";
 import { AppContext } from "../../../../context/appContext";
 import { Link } from "react-router-dom";
-
+import ptsIcon from "../../../../static/score.svg";
+import milesIcon from "../../../../static/miles.svg";
+import shareIcon from "../../../../static/share.svg";
 const EndScreen: React.FC = () => {
   const {
     currentRoundGuess,
@@ -14,8 +16,15 @@ const EndScreen: React.FC = () => {
   } = useContext(AppContext);
   const lat = currentRoundGuess.lat;
   const lng = currentRoundGuess.lng;
+  const icon = L.icon({
+    iconUrl: require("../../../../static/marker.svg"),
+    iconSize: [24, 24],
+    iconAnchor: L.point(12, 24),
+  });
+  const point1 = new L.LatLng(lat, lng);
+  const point2 = new L.LatLng(currentRoundAnswer.lat, currentRoundAnswer.lng);
+  const pointList = [point1, point2];
 
-  const icon = L.icon({ iconUrl: require("../../../../static/marker.svg") });
   return (
     <div className={classes.EndOfRound}>
       <div className={classes.Map}>
@@ -33,19 +42,26 @@ const EndScreen: React.FC = () => {
             position={[currentRoundAnswer.lat, currentRoundAnswer.lng]}
             icon={icon}
           />
+          <Polyline positions={pointList} style={{ color: "red" }} />
         </Map>
       </div>
       <div className={classes.InfoContainer}>
         <div className={classes.DataContainer}>
           <div className={classes.Data1}>
+            <img alt="Points Icon" src={ptsIcon} />
             <p>{pointsEarned} PTS</p>
             You got {pointsEarned} points for your guess.
           </div>
           <div className={classes.Data2}>
-            <p>{guessDist} Miles Away</p>
+            <img alt="Distance Icon" src={milesIcon} />
+            <p>{guessDist} Miles </p>
             Your guess was {guessDist} miles away from the correct location!
           </div>
-          <div className={classes.Data3}></div>
+          <div className={classes.Data3}>
+            <img alt="Distance Icon" src={shareIcon} />
+            <p>Share</p>
+            Share this project if you liked it!
+          </div>
         </div>
         <div className={classes.PlayAgainButtonContainer}>
           <Link to="/">

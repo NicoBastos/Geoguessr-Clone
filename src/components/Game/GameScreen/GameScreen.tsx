@@ -67,7 +67,8 @@ const GameScreen: React.FC = () => {
     var distance = Math.floor(
       (getDistance(currentRoundGuess, currentRoundAnswer) / 1000) * 0.62137119
     );
-    const pointsEarnedCalc = -2 * distance + 6371;
+    // 3963
+    const pointsEarnedCalc = -distance + 7926;
     setGuessDist(distance);
     setPointsEarned(pointsEarnedCalc);
     setPoints((prevPoints) => prevPoints + pointsEarnedCalc);

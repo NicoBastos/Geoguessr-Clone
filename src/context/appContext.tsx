@@ -74,9 +74,9 @@ const getRandomPosition = () => {
 };
 const AppContext = React.createContext<Partial<ContextProperties>>({});
 const AppContextProvider: React.FC<Props> = (props) => {
-  const [points, setPoints] = useState<number>(0);
-  const [difficulty, setDifficulty] = useState<string>("");
-  const [round, setRound] = useState<number>(0);
+  const [points, setPoints] = useState(0);
+  const [difficulty, setDifficulty] = useState("");
+  const [round, setRound] = useState(1);
   const [currentRoundFinished, setCurrentRoundFished] = useState<boolean>(
     false
   );

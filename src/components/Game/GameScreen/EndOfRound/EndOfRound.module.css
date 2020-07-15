@@ -39,8 +39,10 @@
   border-radius: 157.143px;
   color: #4f4f4f;
   border: none;
+  font-weight: bold;
   font-size: 22px;
-  text-transform: uppercase;
+  align-items: center;
+  text-align: center;
   letter-spacing: 6px;
-  line-height: 30px;
+  text-transform: uppercase;
 }

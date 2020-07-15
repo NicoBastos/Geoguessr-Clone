@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import classes from "./EndOfRound.module.css";
-import { Map, TileLayer, Marker } from "react-leaflet";
+import { Map, TileLayer, Marker, Polyline } from "react-leaflet";
 import L from "leaflet";
 import { AppContext } from "../../../../context/appContext";
+import ReactLeafletMultiOptionsPolyline from "../PolyLine/CustomPolyline";
+
 interface Props {
   handleNextRound: () => any;
 }
@@ -14,7 +16,14 @@ const EndOfRound: React.FC<Props> = (props) => {
     guessDist,
   } = useContext(AppContext);
   const { lat, lng } = currentRoundGuess;
-  const icon = L.icon({ iconUrl: require("../../../../static/marker.svg") });
+  const icon = L.icon({
+    iconUrl: require("../../../../static/marker.svg"),
+    iconSize: [24, 24],
+    iconAnchor: L.point(12, 24),
+  });
+  const point1 = new L.LatLng(lat, lng);
+  const point2 = new L.LatLng(currentRoundAnswer.lat, currentRoundAnswer.lng);
+  const pointList = [point1, point2];
   return (
     <div className={classes.EndOfRound}>
       <div className={classes.Map}>
@@ -32,6 +41,7 @@ const EndOfRound: React.FC<Props> = (props) => {
             position={[currentRoundAnswer.lat, currentRoundAnswer.lng]}
             icon={icon}
           />
+          <Polyline positions={pointList} />
         </Map>
       </div>
       <div className={classes.InfoContainer}>

@@ -20,28 +20,32 @@ const DiffcultySelector: React.FC<Props> = (props) => {
     <div className={classes.DiffcultySelector}>
       <div className={classes.ButtonsContainer}>
         <button className={easyButtonClass} onClick={() => handleClick("easy")}>
-          Easy
+          EASY
         </button>
         <button
           className={mediumButtonClass}
           onClick={() => handleClick("medium")}
         >
-          Medium
+          MEDIUM
         </button>
         <button className={hardButtonClass} onClick={() => handleClick("hard")}>
-          Hard
+          HARD
         </button>
       </div>
-      {selected === "easy" ? (
-        <p>Roads are labeled, you can move and look around freely.</p>
-      ) : selected === "medium" ? (
-        <p>Roads are not labeled, zoom is disabled and you can't pan around</p>
-      ) : (
-        <p>
-          Roads are not labaled, zoom is disabled and you can't pan or move
-          around.
-        </p>
-      )}
+      <div className={classes.Paragraph}>
+        {selected === "easy" ? (
+          <p>Roads are labeled, you can move and look around freely.</p>
+        ) : selected === "medium" ? (
+          <p>
+            Roads are not labeled, zoom is disabled and you can't pan around
+          </p>
+        ) : (
+          <p>
+            Roads are not labaled, zoom is disabled and you can't pan or move
+            around.
+          </p>
+        )}
+      </div>
     </div>
   );
 };
