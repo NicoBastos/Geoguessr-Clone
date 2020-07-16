@@ -28,7 +28,6 @@ const StreetView: React.FC<Props> = (props) => {
         zoomControl: true,
         clickToGo: true,
       };
-      console.log("streetview");
       break;
     case "medium":
       streetViewPanoramaOptions = {

@@ -63,6 +63,7 @@ ReactStreetview.propTypes = {
   streetViewPanoramaOptions: PropTypes.object.isRequired,
   onPositionChanged: PropTypes.func,
   onPovChanged: PropTypes.func,
+  position: PropTypes.object,
 };
 
 ReactStreetview.defaultProps = {

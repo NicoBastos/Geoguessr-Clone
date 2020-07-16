@@ -23,7 +23,7 @@ interface TransitionStyles {
   exited: TransitionStyle;
 }
 
-const GameScreen: React.FC = () => {
+const GameScreenTest: React.FC = () => {
   const {
     difficulty,
     round,
@@ -92,42 +92,43 @@ const GameScreen: React.FC = () => {
   return (
     <div className={classes.GameScreen}>
       <div className={classes.MapWrapper}>
-        {currentRoundFinished ? (
-          gameFinished ? (
-            <Modal show={currentRoundFinished}>
-              <EndScreen />
-            </Modal>
-          ) : (
-            <Modal show={currentRoundFinished}>
-              {<EndOfRound handleNextRound={handleNextRound} />}
-            </Modal>
-          )
-        ) : (
-          <WorldMap
-            handleEndOfRound={endOfRoundHandler}
-            className={classes.Map}
-          />
-        )}
-        {/* <Transition
+        <Transition
           items={!currentRoundFinished}
-          from={{ transform: "translateX(0)" }}
-          enter={{ transform: "translateX(0)" }}
-          leave={{ transform: "translateY(50)" }}
-          config={{ duration: 50 }}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+          config={{ duration: 300 }}
         >
           {(show) =>
-            show &&
-            ((props) => (
-              // Remember, gotts give it a className and {height: 100%};
-              <animated.div style={props} className={classes.DIV}>
-                <WorldMap
-                  handleEndOfRound={endOfRoundHandler}
-                  className={classes.Map}
-                />
-              </animated.div>
-            ))
+            show
+              ? (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <WorldMap
+                      handleEndOfRound={endOfRoundHandler}
+                      className={classes.Map}
+                    />
+                  </animated.div>
+                )
+              : gameFinished
+              ? (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <Modal show={currentRoundFinished}>
+                      <EndScreen />
+                    </Modal>
+                  </animated.div>
+                )
+              : (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <Modal show={currentRoundFinished}>
+                      <EndOfRound handleNextRound={handleNextRound} />
+                    </Modal>
+                  </animated.div>
+                )
           }
-        </Transition> */}
+        </Transition>
       </div>
 
       <div className={classes.StreetView}>
@@ -137,4 +138,4 @@ const GameScreen: React.FC = () => {
   );
 };
 
-export default GameScreen;
+export default GameScreenTest;
