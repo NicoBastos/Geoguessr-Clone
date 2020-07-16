@@ -1,5 +1,5 @@
-import React, { useContext, useRef, useEffect } from "react";
-import ReactStreetview from "react-streetview";
+import React, { useContext, useRef, useEffect, useState } from "react";
+import ReactStreetview from "./ReactStreetView/ReactStreetView";
 import classes from "./StreetView.module.css";
 import { AppContext } from "../../../../context/appContext";
 interface Props {
@@ -13,9 +13,8 @@ interface Position {
 //Fake key AIzaSyBKCeA2SUnKaec8XdxOTM-JUAtYvV1NXAg
 // AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A
 const StreetView: React.FC<Props> = (props) => {
-  const { currentRoundAnswer, difficulty, getRandomPosition } = useContext(
-    AppContext
-  );
+  const { currentRoundAnswer, difficulty } = useContext(AppContext);
+
   const googleMapsApiKey = "AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A";
   let streetViewPanoramaOptions;
   switch (difficulty) {
@@ -57,19 +56,12 @@ const StreetView: React.FC<Props> = (props) => {
       };
       break;
   }
-
-  const streetViewRef: any = useRef();
-  useEffect(() => {
-    // streetViewRef.current.setPosition(getRandomPosition());
-    console.log(streetViewRef.current);
-  });
   return (
     <ReactStreetview
       apiKey={googleMapsApiKey}
       streetViewPanoramaOptions={streetViewPanoramaOptions}
       className={classes.StreetViewComponent}
-      ref={streetViewRef}
-      position={getRandomPosition()}
+      position={currentRoundAnswer}
     />
   );
 };
