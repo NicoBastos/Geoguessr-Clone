@@ -10,12 +10,11 @@ interface Position {
   lat: number;
   lng: number;
 }
-//Fake key AIzaSyBKCeA2SUnKaec8XdxOTM-JUAtYvV1NXAg
-// AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A
+
 const StreetView: React.FC<Props> = (props) => {
   const { currentRoundAnswer, difficulty } = useContext(AppContext);
 
-  const googleMapsApiKey = "AIzaSyBTUFFAxn8LxEH8befAbCmFFRt7XQ5QK3A";
+  const googleMapsApiKey = process.env.REACT_APP_MAPS_API_KEY;
   let streetViewPanoramaOptions;
   switch (difficulty) {
     case "easy":
