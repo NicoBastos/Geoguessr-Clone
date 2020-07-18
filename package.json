@@ -17,6 +17,7 @@
     "@types/react-leaflet": "^2.5.2",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-transition-group": "^4.4.0",
+    "@types/socket.io-client": "^1.4.33",
     "@types/styled-components": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
@@ -64,6 +65,7 @@
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
     "react-spring": "^8.0.27",
     "react-streetview": "git+https://github.com/NicoBastos/react-streetview.git",
     "resolve": "1.15.0",
@@ -71,6 +73,7 @@
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
     "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "style-loader": "0.23.1",
     "styled-components": "^5.1.1",
     "terser-webpack-plugin": "2.3.5",
@@ -83,9 +86,9 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"
