@@ -17,11 +17,12 @@ const WorldMap: React.FC<Props> = (props) => {
     iconAnchor: L.point(12, 24),
   });
 
-  const [selected, setSelected] = useState<boolean>(false);
+  const [selected, setSelected] = useState(false);
   const handleMapClick = (e: any) => {
     setCurrentRoundGuess({ ...e.latlng });
     setSelected(true);
   };
+  const tileLayer = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
   return (
     <div className={classes.WorldMapContainer}>
@@ -42,7 +43,7 @@ const WorldMap: React.FC<Props> = (props) => {
         ) : (
           <p></p>
         )}
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer url={tileLayer} />
       </Map>
       <div className={classes.ConfirmButton}>
         <ConfirmGuessButton

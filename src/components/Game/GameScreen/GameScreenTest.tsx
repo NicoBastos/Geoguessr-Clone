@@ -16,12 +16,6 @@ interface TransitionStyle {
   transform?: string | number;
   opacity: number;
 }
-interface TransitionStyles {
-  entering: TransitionStyle;
-  entered: TransitionStyle;
-  exiting: TransitionStyle;
-  exited: TransitionStyle;
-}
 
 const GameScreenTest: React.FC = () => {
   const {
@@ -69,7 +63,6 @@ const GameScreenTest: React.FC = () => {
     var distance = Math.floor(
       (getDistance(currentRoundGuess, currentRoundAnswer) / 1000) * 0.62137119
     );
-    // 3963
     const pointsEarnedCalc = -distance + 7926;
     setGuessDist(distance);
     setPointsEarned(pointsEarnedCalc);
@@ -130,7 +123,6 @@ const GameScreenTest: React.FC = () => {
           }
         </Transition>
       </div>
-
       <div className={classes.StreetView}>
         <StreetView difficulty={difficulty} coordinates={currentRoundAnswer} />
       </div>

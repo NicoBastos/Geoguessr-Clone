@@ -31,6 +31,6 @@ const StartButton: React.FC<Props> = (props) => {
   ) : (
     <button className={classes.StartButton}>START GAME</button>
   );
-  return <React.Fragment>{button}</React.Fragment>;
+  return { button };
 };
 export default StartButton;
