@@ -3,6 +3,7 @@ import classes from "./Home.module.css";
 import { ReactComponent as Logo } from "../../static/geoguesser_logo.svg";
 import DiffcultySelector from "./DifficultySelector/DifficultySelector";
 import StartButton from "../Home/StartButton/StartButton";
+
 const Home: React.FC = () => {
   const [difficulty, setDifficulty] = useState<string>("");
   const userSelectedDifficulty: boolean = Boolean(difficulty) ? true : false;

@@ -6,10 +6,6 @@ interface Props {
   difficulty: string | undefined;
   coordinates: { lat: number; lng: number };
 }
-interface Position {
-  lat: number;
-  lng: number;
-}
 
 const StreetView: React.FC<Props> = (props) => {
   const { currentRoundAnswer, difficulty } = useContext(AppContext);

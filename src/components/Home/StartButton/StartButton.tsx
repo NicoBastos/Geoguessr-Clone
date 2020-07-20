@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import classes from "./StartButton.module.css";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../../context/appContext";
+import { socketContext } from "../../../context/socketContext";
 interface Props {
   difficultySettings: {
     userSelectedDifficulty: boolean;
@@ -18,6 +19,8 @@ const StartButton: React.FC<Props> = (props) => {
     setCurrentRoundFished,
   } = useContext(AppContext);
 
+  const { socket, handleStart } = useContext(socketContext);
+
   useEffect(() => {
     setDifficulty(difficulty);
     setPoints(0);
@@ -26,10 +29,14 @@ const StartButton: React.FC<Props> = (props) => {
   });
   const button: JSX.Element = userSelectedDifficulty ? (
     <Link to="/game">
-      <button className={classes.StartButton}>START GAME</button>
+      <button className={classes.StartButton} onClick={() => handleStart()}>
+        START GAME
+      </button>
     </Link>
   ) : (
-    <button className={classes.StartButton}>START GAME</button>
+    <button className={classes.StartButton} onClick={() => handleStart}>
+      START GAME
+    </button>
   );
   return <>{button}</>;
 };

@@ -8,6 +8,7 @@ import Modal from "../Modal/Modal";
 import EndScreen from "../GameScreen/EndScreen/EndScreen";
 import { Transition } from "react-spring/renderprops";
 import { animated } from "react-spring/";
+
 interface Game {
   round: number;
   points: number;
