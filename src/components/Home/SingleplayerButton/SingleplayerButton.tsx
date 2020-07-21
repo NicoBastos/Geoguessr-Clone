@@ -9,7 +9,7 @@ const StartButton: React.FC = (props) => {
 
   return (
     <Link to="/singleplayer">
-      <button className={classes.StartButton}>SINGLE PLAYER</button>;
+      <button className={classes.StartButton}>SINGLE PLAYER</button>
     </Link>
   );
 };
