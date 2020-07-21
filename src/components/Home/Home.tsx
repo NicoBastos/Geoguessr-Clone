@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import classes from "./Home.module.css";
 import { ReactComponent as Logo } from "../../static/geoguesser_logo.svg";
 import DiffcultySelector from "./DifficultySelector/DifficultySelector";
-import StartButton from "../Home/StartButton/StartButton";
+import MultiplayerButton from "./MultiplayerButton/MultiplayerButton";
+import SingleplayerButton from "./SingleplayerButton/SingleplayerButton";
 
 const Home: React.FC = () => {
   const [difficulty, setDifficulty] = useState<string>("");
@@ -18,13 +19,14 @@ const Home: React.FC = () => {
         world and challenges your ability to recognize your surroundings
       </p>
       <div className={classes.gameSettings}>
-        <div className={classes.difficultySelector}>
+        {/* <div className={classes.difficultySelector}>
           <DiffcultySelector difficulty={(button) => setDifficulty(button)} />
+        </div> */}
+        <div className={classes.SingleplayerButtonContainer}>
+          <MultiplayerButton />
         </div>
-        <div className={classes.StartButtonContainer}>
-          <StartButton
-            difficultySettings={{ userSelectedDifficulty, difficulty }}
-          />
+        <div className={classes.MultiplayerButtonContaienr}>
+          <SingleplayerButton />
         </div>
       </div>
     </div>

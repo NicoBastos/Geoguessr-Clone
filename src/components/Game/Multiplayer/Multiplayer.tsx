@@ -1,11 +1,11 @@
 import React, { useContext, useState, useRef } from "react";
 import { AppContext } from "../../../context/appContext";
-import StreetView from "./StreetView/StreetView";
-import classes from "./GameScreen.module.css";
+import StreetView from "../shared/StreetView/StreetView";
+import classes from "./Singleplayer.module.css";
 import WorldMap from "./WorldMap/WorldMap";
 import EndOfRound from "./EndOfRound/EndOfRound";
-import Modal from "../Modal/Modal";
-import EndScreen from "../GameScreen/EndScreen/EndScreen";
+import Modal from "../shared/Modal/Modal";
+import EndScreen from "./EndScreen/EndScreen";
 import { Transition } from "react-spring/renderprops";
 import { animated } from "react-spring/";
 
@@ -18,7 +18,7 @@ interface TransitionStyle {
   opacity: number;
 }
 
-const GameScreenTest: React.FC = () => {
+const GameScreen: React.FC = () => {
   const {
     difficulty,
     round,
@@ -131,4 +131,4 @@ const GameScreenTest: React.FC = () => {
   );
 };
 
-export default GameScreenTest;
+export default GameScreen;

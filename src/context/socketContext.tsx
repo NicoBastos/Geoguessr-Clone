@@ -11,7 +11,7 @@ type ContextProperties = {
 const socketContext = React.createContext<Partial<ContextProperties>>({});
 const socketContextProvider: React.FC<Props> = (props) => {
   const handleStart = () => {
-    socket.emit("createRoom", { name: "penis" });
+    socket.emit("createRoom", { name: "penis", roomID: Date.now() });
   };
   const socket = io.connect("http://localhost:5000");
   return (

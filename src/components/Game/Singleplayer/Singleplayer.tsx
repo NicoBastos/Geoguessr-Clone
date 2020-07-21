@@ -1,13 +1,14 @@
 import React, { useContext, useState, useRef } from "react";
 import { AppContext } from "../../../context/appContext";
-import StreetView from "./StreetView/StreetView";
-import classes from "./GameScreen.module.css";
+import StreetView from "../shared/StreetView/StreetView";
+import classes from "./Singleplayer.module.css";
 import WorldMap from "./WorldMap/WorldMap";
 import EndOfRound from "./EndOfRound/EndOfRound";
-import Modal from "../Modal/Modal";
-import EndScreen from "../GameScreen/EndScreen/EndScreen";
+import Modal from "../shared/Modal/Modal";
+import EndScreen from "./EndScreen/EndScreen";
 import { Transition } from "react-spring/renderprops";
 import { animated } from "react-spring/";
+
 interface Game {
   round: number;
   points: number;
@@ -15,12 +16,6 @@ interface Game {
 interface TransitionStyle {
   transform?: string | number;
   opacity: number;
-}
-interface TransitionStyles {
-  entering: TransitionStyle;
-  entered: TransitionStyle;
-  exiting: TransitionStyle;
-  exited: TransitionStyle;
 }
 
 const GameScreen: React.FC = () => {
@@ -69,7 +64,6 @@ const GameScreen: React.FC = () => {
     var distance = Math.floor(
       (getDistance(currentRoundGuess, currentRoundAnswer) / 1000) * 0.62137119
     );
-    // 3963
     const pointsEarnedCalc = -distance + 7926;
     setGuessDist(distance);
     setPointsEarned(pointsEarnedCalc);
@@ -92,44 +86,44 @@ const GameScreen: React.FC = () => {
   return (
     <div className={classes.GameScreen}>
       <div className={classes.MapWrapper}>
-        {currentRoundFinished ? (
-          gameFinished ? (
-            <Modal show={currentRoundFinished}>
-              <EndScreen />
-            </Modal>
-          ) : (
-            <Modal show={currentRoundFinished}>
-              {<EndOfRound handleNextRound={handleNextRound} />}
-            </Modal>
-          )
-        ) : (
-          <WorldMap
-            handleEndOfRound={endOfRoundHandler}
-            className={classes.Map}
-          />
-        )}
-        {/* <Transition
+        <Transition
           items={!currentRoundFinished}
-          from={{ transform: "translateX(0)" }}
-          enter={{ transform: "translateX(0)" }}
-          leave={{ transform: "translateY(50)" }}
-          config={{ duration: 50 }}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+          config={{ duration: 300 }}
         >
           {(show) =>
-            show &&
-            ((props) => (
-              // Remember, gotts give it a className and {height: 100%};
-              <animated.div style={props} className={classes.DIV}>
-                <WorldMap
-                  handleEndOfRound={endOfRoundHandler}
-                  className={classes.Map}
-                />
-              </animated.div>
-            ))
+            show
+              ? (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <WorldMap
+                      handleEndOfRound={endOfRoundHandler}
+                      className={classes.Map}
+                    />
+                  </animated.div>
+                )
+              : gameFinished
+              ? (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <Modal show={currentRoundFinished}>
+                      <EndScreen />
+                    </Modal>
+                  </animated.div>
+                )
+              : (props) => (
+                  // Remember, gotta give it a className and {height: 100%};
+                  <animated.div style={props} className={classes.DIV}>
+                    <Modal show={currentRoundFinished}>
+                      <EndOfRound handleNextRound={handleNextRound} />
+                    </Modal>
+                  </animated.div>
+                )
           }
-        </Transition> */}
+        </Transition>
       </div>
-
       <div className={classes.StreetView}>
         <StreetView difficulty={difficulty} coordinates={currentRoundAnswer} />
       </div>
