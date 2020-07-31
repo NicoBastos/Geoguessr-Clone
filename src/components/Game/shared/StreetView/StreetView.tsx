@@ -11,7 +11,6 @@ const StreetView: React.FC<Props> = (props) => {
   const { currentRoundAnswer, difficulty } = useContext(AppContext);
 
   const googleMapsApiKey = process.env.REACT_APP_MAPS_API_KEY;
-  console.log(googleMapsApiKey);
 
   let streetViewPanoramaOptions;
   switch (difficulty) {
