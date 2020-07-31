@@ -31,8 +31,7 @@ const Home: React.FC = () => {
         <div className={classes.difficultySelector}>
           <DiffcultySelector difficulty={(button) => setDifficulty(button)} />
         </div>
-
-        <div className={classes.MultiplayerButtonContaienr}>
+        <div className={classes.StartButton}>
           <SingleplayerButton />
         </div>
       </div>

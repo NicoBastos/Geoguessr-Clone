@@ -3,25 +3,20 @@
   display: grid;
   background: cover;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     ". . . ."
     "logo logo logo logo"
     ". paragraph paragraph ."
-    ". gameSettings gameSettings ."
+    ". gameSettings gameSettings  ."
     ". . . . ";
   align-items: center;
   grid-row-gap: 10%;
 }
-.SingleplayerButtonContainer {
-  width: 100%;
-  height: 25%;
-  margin: 3%;
-}
-.MultiplayerButtonContaienr {
+
+.StartButton {
   width: 100%;
   height: 30%;
-  /* margin: 3%; */
 }
 
 .difficultySelector {
@@ -58,71 +53,14 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .paragraph {
-    text-align: center;
-    /* margin: 0 !important; */
-  }
-  .gameSettings {
-    margin-top: 6%;
-    width: 100%;
-    height: 100%;
-    grid-area: gameSettings;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 3px solid black;
-  }
-  .logo {
-    width: 100vw;
-  }
-  .logoImg {
-    width: 300px;
-  }
 }
 
 @media only screen and (max-width: 550px) {
-  .difficultySelector {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    grid-area: difficultySelector;
-  }
-  .logoImg {
-    width: 150px;
-  }
-  .logo {
-    width: 100vw;
-  }
 }
 
 @media only screen and (max-width: 750px) {
-  .logo {
-  }
-  .logoImg {
-    width: 500px;
-  }
-  .difficultySelector {
-    display: flex;
-    width: 100vw;
-    height: 100%;
-    justify-content: center;
-    grid-area: difficultySelector;
-  }
 }
 @media only screen and (max-width: 950px) {
-  .logo {
-    margin-left: 3%;
-  }
-  .logoImg {
-    width: 550px;
-  }
 }
 @media only screen and (max-width: 1150px) {
-  .logo {
-    margin-left: 3%;
-  }
-  .logoImg {
-    width: 550px;
-  }
 }

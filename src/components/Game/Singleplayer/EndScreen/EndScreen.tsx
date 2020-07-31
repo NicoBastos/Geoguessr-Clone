@@ -11,8 +11,8 @@ const EndScreen: React.FC = () => {
   const {
     currentRoundGuess,
     currentRoundAnswer,
-    pointsEarned,
     guessDist,
+    points,
   } = useContext(AppContext);
   const lat = currentRoundGuess.lat;
   const lng = currentRoundGuess.lng;
@@ -47,20 +47,21 @@ const EndScreen: React.FC = () => {
       </div>
       <div className={classes.InfoContainer}>
         <div className={classes.DataContainer}>
-          <div className={classes.Data1}>
+          <div className={classes.Data}>
             <img alt="Points Icon" src={ptsIcon} />
-            <p>{pointsEarned} PTS</p>
-            You got {pointsEarned} points for your guess.
+            <p>{points} PTS</p>
+            You got {points} total points for your guesses.
           </div>
           <div className={classes.Data2}>
             <img alt="Distance Icon" src={milesIcon} />
             <p>{guessDist} Miles </p>
-            Your guess was {guessDist} miles away from the correct location!
+            Your last guess was {guessDist} miles away from the correct
+            location.
           </div>
           <div className={classes.Data3}>
             <img alt="Distance Icon" src={shareIcon} />
             <p>Share</p>
-            Share this project if you liked it!
+            Share this project if you liked it.
           </div>
         </div>
         <div className={classes.PlayAgainButtonContainer}>
