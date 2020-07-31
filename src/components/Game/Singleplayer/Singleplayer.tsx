@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../../../context/appContext";
 import StreetView from "../shared/StreetView/StreetView";
 import classes from "./Singleplayer.module.css";

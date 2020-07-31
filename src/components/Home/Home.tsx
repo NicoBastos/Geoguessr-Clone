@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import classes from "./Home.module.css";
 import { ReactComponent as Logo } from "../../static/geoguesser_logo.svg";
 import DiffcultySelector from "./DifficultySelector/DifficultySelector";
-import MultiplayerButton from "./MultiplayerButton/MultiplayerButton";
 import SingleplayerButton from "./SingleplayerButton/SingleplayerButton";
 import { AppContext } from "../../context/appContext";
 
@@ -33,11 +32,7 @@ const Home: React.FC = () => {
         <div className={classes.difficultySelector}>
           <DiffcultySelector difficulty={(button) => setDifficulty(button)} />
         </div>
-        {/* <input /> */}
-        {/* 
-        <div className={classes.SingleplayerButtonContainer}>
-          <MultiplayerButton />
-        </div> */}
+
         <div className={classes.MultiplayerButtonContaienr}>
           <SingleplayerButton />
         </div>

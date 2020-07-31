@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ReactStreetview from "./ReactStreetView/ReactStreetView";
 import classes from "./StreetView.module.css";
 import { AppContext } from "../../../../context/appContext";
