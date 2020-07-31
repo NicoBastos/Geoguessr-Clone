@@ -13,7 +13,6 @@ const Home: React.FC = () => {
     setCurrentRoundFished,
     setDifficulty,
   } = useContext(AppContext);
-  const userSelectedDifficulty: boolean = Boolean(difficulty) ? true : false;
   useEffect(() => {
     setRound(1);
     setPoints(0);
