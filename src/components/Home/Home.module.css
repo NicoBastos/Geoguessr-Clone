@@ -20,8 +20,8 @@
 }
 .MultiplayerButtonContaienr {
   width: 100%;
-  height: 25%;
-  margin: 3%;
+  height: 30%;
+  /* margin: 3%; */
 }
 
 .difficultySelector {
@@ -36,15 +36,14 @@
   margin: 0;
 }
 .gameSettings {
-  width: 100%;
-  border: 3px solid black;
+  width: 50%;
   /* I have to set the margin left to the rest of the width divided by two because I probably set up the layout wrong somehow. */
-  /* margin-left: 25%; */
+  margin-left: 25%;
   margin-bottom: 20%;
-  height: 100%;
+  height: 60%;
   grid-area: gameSettings;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 

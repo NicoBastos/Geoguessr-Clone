@@ -25,9 +25,9 @@ function App() {
                 <Route path="/singleplayer">
                   <Singleplayer />
                 </Route>
-                <Route path="/multiplayer">
+                {/* <Route path="/multiplayer">
                   <p>multiplayer screen</p>
-                </Route>
+                </Route> */}
               </Switch>
             </div>
           </SocketContextProvider>

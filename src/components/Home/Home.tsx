@@ -7,9 +7,13 @@ import SingleplayerButton from "./SingleplayerButton/SingleplayerButton";
 import { AppContext } from "../../context/appContext";
 
 const Home: React.FC = () => {
-  const { difficulty, setRound, setPoints, setCurrentRoundFished } = useContext(
-    AppContext
-  );
+  const {
+    difficulty,
+    setRound,
+    setPoints,
+    setCurrentRoundFished,
+    setDifficulty,
+  } = useContext(AppContext);
   const userSelectedDifficulty: boolean = Boolean(difficulty) ? true : false;
   useEffect(() => {
     setRound(1);
@@ -26,12 +30,14 @@ const Home: React.FC = () => {
         world and challenges your ability to recognize your surroundings
       </p>
       <div className={classes.gameSettings}>
-        {/* <div className={classes.difficultySelector}>
+        <div className={classes.difficultySelector}>
           <DiffcultySelector difficulty={(button) => setDifficulty(button)} />
-        </div> */}
+        </div>
+        {/* <input /> */}
+        {/* 
         <div className={classes.SingleplayerButtonContainer}>
           <MultiplayerButton />
-        </div>
+        </div> */}
         <div className={classes.MultiplayerButtonContaienr}>
           <SingleplayerButton />
         </div>

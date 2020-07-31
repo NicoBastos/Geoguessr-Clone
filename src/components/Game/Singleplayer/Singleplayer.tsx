@@ -9,15 +9,6 @@ import EndScreen from "./EndScreen/EndScreen";
 import { Transition } from "react-spring/renderprops";
 import { animated } from "react-spring/";
 
-interface Game {
-  round: number;
-  points: number;
-}
-interface TransitionStyle {
-  transform?: string | number;
-  opacity: number;
-}
-
 const GameScreen: React.FC = () => {
   const {
     difficulty,
